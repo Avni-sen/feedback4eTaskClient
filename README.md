@@ -1,27 +1,29 @@
 # Feedback4eTaskClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Bu proje, Angular ve ASP.NET Core (.NET 6) kullanılarak geliştirilmiştir ve katmanlı bir mimariye sahiptir. Proje, bir Web API uygulamasıdır ve SQL Server veritabanını kullanmaktadır.Database .script olarak dışarı çıkartılmıştır bu database.script dosyası WebAPI KatmanındakiDatabase klasöründe mevcuttur.
 
-## Development server
+Gereksinimler
+Projenin çalışması için aşağıdaki gereksinimlerin yerine getirilmesi gerekmektedir:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+.NET 6 SDK
+Node.js ve Angular CLI (Angular projesi için)
+Visual Studio Code veya Visual Studio (Tercih edilen IDE)
+Proje Yapısı
+Proje, aşağıdaki katmanlar tarafından oluşturulmuştur:
 
-## Code scaffolding
+WebAPI: Web API uygulaması, ASP.NET Core ile oluşturulmuştur. Bu katmanda, API'ye yönelik tüm istekler işlenir ve veritabanı işlemleri gerçekleştirilir. Bu katman, diğer katmanlarla iletişim kurar.
+Business: İş katmanı, iş mantığının yer aldığı katmandır. Bu katmanda, veritabanından gelen veriler işlenir ve iş kurallarına göre veriler hazırlanır.
+DataAccess: Veri katmanı, veritabanı işlemlerinin yapıldığı katmandır. Bu katmanda, veritabanı bağlantısı ve veri işlemleri yer alır.
+UI: Kullanıcı arayüzü katmanı, Angular ile oluşturulmuştur. Bu katmanda, kullanıcıların uygulama ile etkileşim kurduğu tüm bileşenler yer alır.
+Veritabanı Yapısı
+Proje, SQL Server veritabanını kullanmaktadır.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+Kurulum
+Projenin kurulumu için aşağıdaki adımları takip edebilirsiniz:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Projenin dosyalarını bilgisayarınıza indirin veya kopyalayın.
+Veritabanı bağlantısı için, WebAPI katmanındaki appsettings.json dosyasındaki DefaultConnection ayarlarını değiştirin.
+Veritabanını oluşturmak için, WebAPI katmanındaki Database klasörü içindeki Create.sql dosyasını SQL Server Management Studio veya benzeri bir araç ile çalıştırın.
+API uygulamasını çalıştırmak için, WebAPI katmanındaki WebAPI.csproj dosyasını çalıştırın veya terminalde dotnet run komutunu çalıştırın.
+Kullanıcı arayüzü için, UI katmanındaki package.json dosyasını kullanarak gerek
