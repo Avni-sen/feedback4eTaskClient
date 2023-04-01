@@ -26,7 +26,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -35,6 +34,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator'
+import { MatIconModule } from '@angular/material/icon';
+import { ToastrModule } from 'ngx-toastr';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -44,6 +47,7 @@ import { MatPaginatorModule } from '@angular/material/paginator'
     NgbModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
