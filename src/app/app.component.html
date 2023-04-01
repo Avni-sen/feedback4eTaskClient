@@ -1,6 +1,5 @@
 <div class="main-content mt-5">
-  <div class="container shadow"
-    style="background-color: #fff; height: 85vh; border: 1px solid #00000060; border-radius: 10px;">
+  <div class="container shadow" style="background-color: #fff; border: 1px solid #00000060; border-radius: 10px;">
     <h2 class="title">Airports Mesuretment Calculator</h2>
 
     <div class="row">
@@ -32,7 +31,17 @@
               </mat-option>
             </mat-autocomplete>
           </mat-form-field>
+
+          <div class="d-flex align-items-center justify-content-center">
+            <button matButton class="btn btn-success btn-sm d-flex align-items-center justify-content-center px-5 gap-1"
+              style="color: #fff;" (click)="resetCountryValue()">
+              <mat-icon class="btn-icon pr-3">clear</mat-icon>
+              Reset
+            </button>
+          </div>
         </div>
+
+
         <div class="col-md-11 pl-2">
           <mat-form-field class="col-12">
             <input [disabled]="true" type="text" placeholder='Airport' matInput class="small"
@@ -70,6 +79,13 @@
               </mat-option>
             </mat-autocomplete>
           </mat-form-field>
+          <div class="d-flex align-items-center justify-content-center">
+            <button matButton class="btn btn-success btn-sm d-flex align-items-center justify-content-center px-5 gap-1"
+              style="color: #fff;" (click)="resetSecondCountryValue()">
+              <mat-icon class="btn-icon pr-3">clear</mat-icon>
+              Reset
+            </button>
+          </div>
         </div>
         <div class="col-md-11 pl-2">
           <mat-form-field class="col-12">
@@ -78,10 +94,11 @@
           </mat-form-field>
         </div>
       </div>
+
     </div>
 
     <div class="d-flex align-items-center justify-content-center">
-      <button matButton class="btn btn-primary btn-lg d-flex align-items-center justify-content-center px-5 gap-1"
+      <button matButton class="btn btn-success btn-lg d-flex align-items-center justify-content-center px-5 gap-1"
         (click)="calculate()">
         <mat-icon class="btn-icon pr-3">calculate</mat-icon>
         Hesapla

@@ -201,13 +201,39 @@ export class AppComponent implements OnInit {
         secondAirportLat: this.secondaryAirportLocationLat
 
       }
+
       this.appService.calculateAirportsMesuretmentForMils(res).subscribe(data => {
-        this.milesControl.setValue(data + ' miles');
+
+        this.milesControl.setValue(data.toFixed(2) + ' miles');
         this.toastr.success('Hesaplama Başarılı!', 'Uyarı!');
       });
     }
+  }
 
+  resetCountryValue() {
+    //countrycontrolleri temizle 
+    this.countiesControl.setValue("")
+    this.citiesControl.setValue("")
+    this.selectedCountry = undefined;
+    this.selectedCityCode = undefined;
+    this.airportLocationLat = undefined;
+    this.airportLocationLon = undefined;
+    this.airportControl.setValue('');
+    this.cities = [];
+    this.filteredCities = undefined
+    this.milesControl.setValue("")
+  }
 
+  resetSecondCountryValue() {
+    this.countiesSecondControl.setValue("")
+    this.citiesSecondControl.setValue("")
+    this.selectedCountrySecond = undefined;
+    this.selectedSecondCityCode = undefined;
+    this.secondaryAirportLocationLat = undefined;
+    this.secondaryAirportLocationLon = undefined;
+    this.airportSecondControl.setValue('');
+    this.citiesSecond = [];
+    this.milesControl.setValue("")
   }
 
   private _filterCountries(name: string): Country[] {
